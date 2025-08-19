@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 </head>
+
 <body>
     <!-- Header -->
     <header id="header">
@@ -30,7 +32,7 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero" id="home">
+    <!-- <section class="hero" id="home">
         <div class="container hero-content">
             <h1>Professional Services & Creative Solutions</h1>
             <p>We deliver exceptional services, protocols, and photography to elevate your business to new heights.</p>
@@ -39,23 +41,58 @@
                 <a href="#contact" class="btn btn-accent">Contact Us</a>
             </div>
         </div>
-    </section>
+    </section> -->
+<section class="hero" id="home">
+    <!-- Background Video -->
+    <video autoplay muted loop playsinline class="background-video">
+        <source src="images/background.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Overlay -->
+    <div class="overlay"></div>
+
+    <!-- Content -->
+    <div class="container hero-content">
+        <h1>Professional Services & Creative Solutions</h1>
+        <p>We deliver exceptional services, protocols, and photography to elevate your business to new heights.</p>
+        <div class="hero-btns">
+            <a href="#services" class="btn">Our Services</a>
+            <a href="#contact" class="btn btn-accent">Contact Us</a>
+        </div>
+    </div>
+</section>
 
     <!-- About Section -->
     <section class="about" id="about">
         <div class="container">
             <div class="section-title">
                 <h2>About Our Company</h2>
-                <p>We are a team of professionals dedicated to providing top-notch services and creative solutions for businesses of all sizes.</p>
+                <p>We are a team of professionals dedicated to providing top-notch services and creative solutions for
+                    businesses of all sizes.</p>
             </div>
             <div class="about-content">
                 <div class="about-img">
-                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Our Team">
+                    <img src="images/Protocol team.jpg" alt="Our Team">
                 </div>
+              <!-- <div class="video-background">
+  <video autoplay muted loop playsinline>
+    <source src="your-video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div class="content">
+    <h1>Welcome to Our Website</h1>
+    <p>This is a sample background video section.</p>
+  </div>
+</div> -->
+
                 <div class="about-text">
                     <h3>We Provide The Best Services In The Industry</h3>
-                    <p>Founded in 2015, Prime Services has grown to become a leader in professional services, protocol management, and commercial photography. Our mission is to help businesses succeed through innovative solutions and exceptional service.</p>
-                    <p>With a team of over 50 professionals across multiple countries, we've served more than 500 clients worldwide, delivering measurable results and outstanding customer satisfaction.</p>
+                    <p>Founded in 2015, Prime Services has grown to become a leader in professional services, protocol
+                        management, and commercial photography. Our mission is to help businesses succeed through
+                        innovative solutions and exceptional service.</p>
+                    <p>With a team of over 50 professionals across multiple countries, we've served more than 500
+                        clients worldwide, delivering measurable results and outstanding customer satisfaction.</p>
                     <div class="about-features">
                         <div class="feature-item">
                             <div class="feature-icon">
@@ -95,36 +132,43 @@
         <div class="container">
             <div class="section-title">
                 <h2>Our Services</h2>
-                <p>We offer a comprehensive range of services designed to meet all your business needs with professionalism and creativity.</p>
+                <p>We offer a comprehensive range of services designed to meet all your business needs with
+                    professionalism and creativity.</p>
             </div>
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Business Consulting">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                            alt="Business Consulting">
                     </div>
                     <div class="service-content">
                         <h3>Business Consulting</h3>
-                        <p>Strategic planning and expert advice to help your business grow and overcome challenges in today's competitive market.</p>
+                        <p>Strategic planning and expert advice to help your business grow and overcome challenges in
+                            today's competitive market.</p>
                         <a href="#" class="btn">Learn More</a>
                     </div>
                 </div>
                 <div class="service-card">
                     <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Protocol Services">
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                            alt="Protocol Services">
                     </div>
                     <div class="service-content">
                         <h3>Protocol Services</h3>
-                        <p>Professional protocol services for corporate events, diplomatic meetings, and high-profile occasions.</p>
+                        <p>Professional protocol services for corporate events, diplomatic meetings, and high-profile
+                            occasions.</p>
                         <a href="#" class="btn">Learn More</a>
                     </div>
                 </div>
                 <div class="service-card">
                     <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Professional Photography">
+                        <img src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                            alt="Professional Photography">
                     </div>
                     <div class="service-content">
                         <h3>Professional Photography</h3>
-                        <p>High-quality commercial photography including product shots, corporate portraits, and event coverage.</p>
+                        <p>High-quality commercial photography including product shots, corporate portraits, and event
+                            coverage.</p>
                         <a href="#" class="btn">Learn More</a>
                     </div>
                 </div>
@@ -137,7 +181,8 @@
         <div class="container">
             <div class="section-title">
                 <h2>Our Protocols</h2>
-                <p>We follow strict protocols to ensure the highest quality service delivery and customer satisfaction.</p>
+                <p>We follow strict protocols to ensure the highest quality service delivery and customer satisfaction.
+                </p>
             </div>
             <div class="protocol-accordion">
                 <div class="accordion-item">
@@ -147,7 +192,10 @@
                     </div>
                     <div class="accordion-content">
                         <div class="accordion-content-inner">
-                            <p>Our initial consultation follows a structured approach to understand your needs. We begin with a discovery session, followed by needs assessment, solution brainstorming, and proposal development. This ensures we provide tailored solutions that address your specific challenges.</p>
+                            <p>Our initial consultation follows a structured approach to understand your needs. We begin
+                                with a discovery session, followed by needs assessment, solution brainstorming, and
+                                proposal development. This ensures we provide tailored solutions that address your
+                                specific challenges.</p>
                             <ul>
                                 <li>30-60 minute discovery call</li>
                                 <li>Detailed needs assessment questionnaire</li>
@@ -164,7 +212,10 @@
                     </div>
                     <div class="accordion-content">
                         <div class="accordion-content-inner">
-                            <p>Every project follows our standardized execution protocol to ensure consistency and quality. This includes project kickoff, milestone planning, quality checkpoints, and client review sessions. Our project managers oversee every step to ensure deadlines and quality standards are met.</p>
+                            <p>Every project follows our standardized execution protocol to ensure consistency and
+                                quality. This includes project kickoff, milestone planning, quality checkpoints, and
+                                client review sessions. Our project managers oversee every step to ensure deadlines and
+                                quality standards are met.</p>
                             <ul>
                                 <li>Detailed project charter development</li>
                                 <li>Weekly progress reports</li>
@@ -181,7 +232,10 @@
                     </div>
                     <div class="accordion-content">
                         <div class="accordion-content-inner">
-                            <p>Our photography services follow a meticulous protocol from pre-shoot planning to final delivery. This includes creative briefing, shot list development, equipment checks, on-set protocols, and post-production workflow. We ensure every image meets our high standards of quality.</p>
+                            <p>Our photography services follow a meticulous protocol from pre-shoot planning to final
+                                delivery. This includes creative briefing, shot list development, equipment checks,
+                                on-set protocols, and post-production workflow. We ensure every image meets our high
+                                standards of quality.</p>
                             <ul>
                                 <li>Pre-shoot creative consultation</li>
                                 <li>Detailed shot list approval</li>
@@ -199,7 +253,10 @@
                     </div>
                     <div class="accordion-content">
                         <div class="accordion-content-inner">
-                            <p>We maintain clear and consistent communication with all clients through our standardized protocol. This includes response time commitments, escalation procedures, and preferred communication channels. Our goal is to keep you informed at every stage of our engagement.</p>
+                            <p>We maintain clear and consistent communication with all clients through our standardized
+                                protocol. This includes response time commitments, escalation procedures, and preferred
+                                communication channels. Our goal is to keep you informed at every stage of our
+                                engagement.</p>
                             <ul>
                                 <li>24-hour response time guarantee</li>
                                 <li>Dedicated account manager</li>
@@ -229,42 +286,48 @@
             </div>
             <div class="portfolio-grid">
                 <div class="portfolio-item" data-category="consulting">
-                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Consulting Project" class="portfolio-img">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                        alt="Consulting Project" class="portfolio-img">
                     <div class="portfolio-overlay">
                         <h3>Business Strategy</h3>
                         <p>Market expansion project for retail client</p>
                     </div>
                 </div>
                 <div class="portfolio-item" data-category="protocol">
-                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Protocol Event" class="portfolio-img">
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                        alt="Protocol Event" class="portfolio-img">
                     <div class="portfolio-overlay">
                         <h3>Corporate Summit</h3>
                         <p>Full protocol services for international conference</p>
                     </div>
                 </div>
                 <div class="portfolio-item" data-category="photography">
-                    <img src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Product Photography" class="portfolio-img">
+                    <img src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                        alt="Product Photography" class="portfolio-img">
                     <div class="portfolio-overlay">
                         <h3>Product Launch</h3>
                         <p>Commercial photography for new product line</p>
                     </div>
                 </div>
                 <div class="portfolio-item" data-category="consulting">
-                    <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Financial Consulting" class="portfolio-img">
+                    <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80"
+                        alt="Financial Consulting" class="portfolio-img">
                     <div class="portfolio-overlay">
                         <h3>Financial Restructuring</h3>
                         <p>Turnaround strategy for manufacturing firm</p>
                     </div>
                 </div>
                 <div class="portfolio-item" data-category="protocol">
-                    <img src="https://images.unsplash.com/photo-1540317580384-e5d500436cd9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1473&q=80" alt="Diplomatic Event" class="portfolio-img">
+                    <img src="https://images.unsplash.com/photo-1540317580384-e5d500436cd9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1473&q=80"
+                        alt="Diplomatic Event" class="portfolio-img">
                     <div class="portfolio-overlay">
                         <h3>Diplomatic Meeting</h3>
                         <p>Protocol services for international delegation</p>
                     </div>
                 </div>
                 <div class="portfolio-item" data-category="photography">
-                    <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Corporate Photography" class="portfolio-img">
+                    <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                        alt="Corporate Photography" class="portfolio-img">
                     <div class="portfolio-overlay">
                         <h3>Corporate Branding</h3>
                         <p>Executive portraits and office photography</p>
@@ -284,7 +347,9 @@
             <div class="testimonial-slider">
                 <div class="testimonial-slide active">
                     <div class="testimonial-content">
-                        <p>"Prime Services transformed our corporate events with their impeccable protocol services. Their attention to detail and professionalism exceeded our expectations. We've received numerous compliments from our international partners about how smoothly everything ran."</p>
+                        <p>"Prime Services transformed our corporate events with their impeccable protocol services.
+                            Their attention to detail and professionalism exceeded our expectations. We've received
+                            numerous compliments from our international partners about how smoothly everything ran."</p>
                     </div>
                     <div class="testimonial-author">
                         <div class="author-img">
@@ -298,7 +363,10 @@
                 </div>
                 <div class="testimonial-slide">
                     <div class="testimonial-content">
-                        <p>"The business consulting services provided by Prime Services helped us identify new market opportunities we hadn't considered. Their strategic insights were invaluable during our expansion phase. We've seen a 35% increase in revenue since implementing their recommendations."</p>
+                        <p>"The business consulting services provided by Prime Services helped us identify new market
+                            opportunities we hadn't considered. Their strategic insights were invaluable during our
+                            expansion phase. We've seen a 35% increase in revenue since implementing their
+                            recommendations."</p>
                     </div>
                     <div class="testimonial-author">
                         <div class="author-img">
@@ -312,7 +380,9 @@
                 </div>
                 <div class="testimonial-slide">
                     <div class="testimonial-content">
-                        <p>"As an e-commerce business, product photography is crucial for us. Prime Services delivered stunning images that significantly improved our conversion rates. Their team understood our brand aesthetic perfectly and worked efficiently to meet our tight deadlines."</p>
+                        <p>"As an e-commerce business, product photography is crucial for us. Prime Services delivered
+                            stunning images that significantly improved our conversion rates. Their team understood our
+                            brand aesthetic perfectly and worked efficiently to meet our tight deadlines."</p>
                     </div>
                     <div class="testimonial-author">
                         <div class="author-img">
@@ -338,7 +408,8 @@
         <div class="container">
             <div class="section-title">
                 <h2>Get In Touch</h2>
-                <p>Have questions or ready to get started with our services? Contact us today and we'll be happy to assist you.</p>
+                <p>Have questions or ready to get started with our services? Contact us today and we'll be happy to
+                    assist you.</p>
             </div>
             <div class="contact-container">
                 <div class="contact-info">
@@ -411,7 +482,8 @@
             <div class="footer-container">
                 <div class="footer-col">
                     <h3>Prime Services</h3>
-                    <p>Providing exceptional services, protocols, and photography solutions to help businesses succeed in today's competitive environment.</p>
+                    <p>Providing exceptional services, protocols, and photography solutions to help businesses succeed
+                        in today's competitive environment.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -458,7 +530,8 @@
     <div class="back-to-top" id="backToTop">
         <i class="fas fa-arrow-up"></i>
     </div>
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
+
 </html>

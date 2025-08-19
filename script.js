@@ -1,5 +1,15 @@
 
     // <!-- JavaScript -->
+window.addEventListener("scroll", function () {
+    const header = document.querySelector("header");
+    const hero = document.querySelector(".hero");
+
+    if (window.scrollY > hero.offsetHeight - 80) {
+        header.classList.add("scrolled");
+    } else {
+        header.classList.remove("scrolled");
+    }
+});
 
         // Mobile Menu Toggle
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
