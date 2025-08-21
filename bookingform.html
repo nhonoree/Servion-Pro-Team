@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kigali Guesthouse - Book Your Stay</title>
+  <style>
+    :root {
+      --primary: #2e7d32; /* Rwanda green */
+      --secondary: #ffca28; /* Rwanda yellow */
+      --dark: #212121;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: var(--dark);
+      background-color: #f5f5f5;
+    }
+    header {
+      background: var(--primary);
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      transition: transform 0.3s ease;
+    }
+    header.scrolled {
+      transform: translateY(-100%);
+    }
+    header.show {
+      transform: translateY(0);
+    }
+    nav a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: var(--secondary);
+    }
+    .hero {
+      background: url('https://source.unsplash.com/random/1200x400?rwanda') center/cover;
+      height: 40vh; /* Adjusted for mobile per your Servion Pro-Team feedback */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+    }
+    .booking-section {
+      padding: 2rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .booking-section h2 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    input, select, button {
+      padding: 0.5rem;
+      font-size: 1rem;
+      border: 1px solid var(--dark);
+      border-radius: 4px;
+    }
+    button {
+      background: var(--primary);
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: var(--secondary);
+      color: var(--dark);
+    }
+    footer {
+      background: var(--dark);
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+    @media (max-width: 600px) {
+      .hero {
+        height: 30vh; /* Smaller for mobile, per your feedback */
+      }
+      nav a {
+        margin: 0 0.5rem;
+        font-size: 0.9rem;
+      }
+      .booking-section {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header id="header">
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#book">Book Now</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+  <section class="hero">
+    <h1>Welcome to Kigali Guesthouse</h1>
+  </section>
+  <section class="booking-section" id="book">
+    <h2>Book Your Stay</h2>
+    <form id="booking-form" onsubmit="handleSubmit(event)">
+      <input type="text" name="name" placeholder="Full Name" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="date" name="checkin" required>
+      <select name="room" required>
+        <option value="" disabled selected>Select Room Type</option>
+        <option value="single">Single Room ($50/night)</option>
+        <option value="double">Double Room ($80/night)</option>
+      </select>
+      <button type="submit">Submit Booking</button>
+    </form>
+  </section>
+  <footer>
+    <p>2025 Kigali Guesthouse. All Rights Reserved. | Designed with ❤️ by Honore Niyirema</p>
+  </footer>
+  <script>
+    // Navbar scroll effect (based on your Servion Pro-Team navbar)
+    let lastScroll = 0;
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.pageYOffset;
+      if (currentScroll > lastScroll && currentScroll > 100) {
+        header.classList.remove('show');
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+        header.classList.add('show');
+      }
+      lastScroll = currentScroll;
+    });
+
+    // Form submission (basic alert for now)
+    function handleSubmit(event) {
+      event.preventDefault();
+      alert('Booking submitted! We will contact you soon.');
+      document.getElementById('booking-form').reset();
+    }
+  </script>
+</body>
+</html>
