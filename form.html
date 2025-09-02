@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Form - Custom Google Form Integration</title>
+  <style>
+      :root {
+          --primary: #4a6cf7;
+          --secondary: #6a79f6;
+          --dark: #1d2143;
+      }
+      * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+      body {
+          background-color: #f8f9fa;
+          padding: 40px 20px;
+          color: #333;
+          line-height: 1.6;
+      }
+      .container {
+          max-width: 800px;
+          margin: 0 auto;
+      }
+      header {
+          text-align: center;
+          margin-bottom: 40px;
+      }
+      header h1 {
+          color: var(--dark);
+          margin-bottom: 10px;
+          font-size: 2.5rem;
+      }
+      header p {
+          color: #666;
+          font-size: 1.1rem;
+      }
+      .contact-form {
+          background: white;
+          padding: 30px;
+          border-radius: 10px;
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+      .form-group {
+          margin-bottom: 20px;
+      }
+      .form-group label {
+          display: block;
+          margin-bottom: 8px;
+          font-weight: 600;
+          color: var(--dark);
+      }
+      .form-control {
+          width: 100%;
+          padding: 12px 15px;
+          border: 1px solid #ddd;
+          border-radius: 5px;
+          font-size: 16px;
+          transition: border-color 0.3s ease;
+      }
+      .form-control:focus {
+          border-color: var(--secondary);
+          outline: none;
+          box-shadow: 0 0 0 3px rgba(106, 121, 246, 0.2);
+      }
+      textarea.form-control {
+          min-height: 150px;
+          resize: vertical;
+      }
+      .btn {
+          background: var(--primary);
+          color: white;
+          border: none;
+          padding: 12px 25px;
+          border-radius: 5px;
+          font-size: 16px;
+          cursor: pointer;
+          transition: background 0.3s ease;
+          font-weight: 600;
+      }
+      .btn:hover {
+          background: var(--secondary);
+      }
+      .form-footer {
+          text-align: center;
+          margin-top: 30px;
+          color: #666;
+          font-size: 14px;
+      }
+      .success-message {
+          display: none;
+          background: #d4edda;
+          color: #155724;
+          padding: 15px;
+          border-radius: 5px;
+          margin-top: 20px;
+          text-align: center;
+      }
+      @media (max-width: 768px) {
+          .contact-form {
+              padding: 20px;
+          }
+          header h1 {
+              font-size: 2rem;
+          }
+      }
+  </style>
+</head>
+<body>
+  <div class="container">
+      <header>
+          <h1>Book Our Services</h1>
+          <p>Fill out the form below and we'll get back to you as soon as possible</p>
+      </header>
+      
+      <div class="contact-form">
+          <!-- Google Form integration -->
+          <form id="contactForm" action="https://docs.google.com/forms/d/e/1FAIpQLSd_P7xcvlmEiUBvMBbVn5wjQ795_F5TjRjDSPOTXQOmlWblqQ/formResponse
+" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
+              <div class="form-group">
+                  <label for="name">Your Name</label>
+                  <!-- Replace entry.xxxxx with your Google Form field ID -->
+                  <input type="text" name="entry.528894097" id="name" class="form-control" required>
+              </div>
+              <div class="form-group">
+                  <label for="email">Your Email</label>
+                  <input type="email" name="entry.393019056" id="email" class="form-control" required>
+              </div>
+              <div class="form-group">
+                  <label for="service">Service Interested In</label>
+                  <select name="entry.192837465" id="service" class="form-control" required>
+                      <option value="">Select a service</option>
+                      <option value="consultation">Consultation</option>
+                      <option value="design">Design Service</option>
+                      <option value="development">Development Package</option>
+                      <option value="support">Support & Maintenance</option>
+                  </select>
+              </div>
+              <div class="form-group">
+                  <label for="message">Your Message</label>
+                  <textarea name="entry.2117678426" id="message" class="form-control" required></textarea>
+              </div>
+              <button type="submit" class="btn">Send Message</button>
+          </form>
+          
+          <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+          
+          <div class="success-message" id="successMessage">
+              Thank you for your message! We'll get back to you soon.
+          </div>
+          
+          <div class="form-footer">
+              <p>This form connects to Google Forms in the background for secure submission</p>
+          </div>
+      </div>
+  </div>
+
+  <script>
+      var submitted = false;
+      document.getElementById('contactForm').addEventListener('submit', function(e) {
+          if (submitted) {
+              document.getElementById('successMessage').style.display = 'block';
+              setTimeout(function() {
+                  document.getElementById('contactForm').reset();
+                  document.getElementById('successMessage').style.display = 'none';
+                  submitted = false;
+              }, 3000);
+          }
+      });
+  </script>
+</body>
+</html>
