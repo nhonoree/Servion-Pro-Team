@@ -18,6 +18,7 @@
         }
         
         body {
+            
             color: var(--text);
             line-height: 1.6;
             overflow-x: hidden;
@@ -360,13 +361,13 @@ nav.scrolled ul li a:hover::after {
             gap: 30px;
         }
         
+        
         .service-card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+    position: relative; /* Create positioning context */
+    min-height: 450px; /* Ensure consistent height */
+    display: flex;
+    flex-direction: column;
+}
         
         .service-card:hover {
             transform: translateY(-10px);
@@ -389,21 +390,97 @@ nav.scrolled ul li a:hover::after {
             transform: scale(1.1);
         }
         
-        .service-content {
-            padding: 30px;
-        }
         
-        .service-content h3 {
-            font-size: 22px;
-            margin-bottom: 15px;
-            color: var(--dark);
-        }
+         .service-content {
+    padding: 30px;
+    flex: 1; /* Allow content to expand */
+    display: flex;
+    flex-direction: column;
+    position: relative; /* Create positioning context for button */
+    padding-bottom: 70px; /* Add space for the button */
+}
         
-        .service-content p {
-            color: var(--text-light);
-            margin-bottom: 20px;
-        }
+         .service-content h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: var(--dark);
+}
         
+         .service-content p {
+    color: var(--text-light);
+    margin-bottom: 20px;
+    flex: 1; /* Push button to bottom */
+}
+        .service-content .btn {
+    position: absolute;
+    bottom: 15px; /* 15px from bottom */
+    left: 30px;
+    right: 30px;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: 600;
+    transition: background 0.3s ease;
+}
+
+.service-content .btn:hover {
+    background: var(--secondary);
+}
+        
+
+        .service-img.slider {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 10px 10px 0 0;
+}
+
+.slides {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+/* Animation: fade in, stay, fade out */
+@keyframes fadeSlide {
+  0% { opacity: 0; }
+  5% { opacity: 1; }
+  25% { opacity: 1; }
+  30% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+.slides img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  animation: fadeSlide 12s infinite; /* 12s for 4 images (3s each) */
+}
+
+/* Start with first image visible and set delays */
+.slides img:nth-child(1) { 
+  animation-delay: 0s; 
+  opacity: 1; /* Make first image visible immediately */
+}
+.slides img:nth-child(2) { 
+  animation-delay: 3s; 
+}
+.slides img:nth-child(3) { 
+  animation-delay: 6s; 
+}
+.slides img:nth-child(4) { 
+  animation-delay: 9s; 
+}
+
+
+
+
+
         /* Protocol Section */
         .protocol {
             padding: 100px 0;
@@ -704,88 +781,126 @@ nav.scrolled ul li a:hover::after {
             min-height: 150px;
             resize: vertical;
         }
-        
-        /* Footer */
-        footer {
-            background: var(--dark);
-            color: white;
-            padding: 50px 0 20px;
-        }
-        
-        .footer-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            margin-bottom: 40px;
-        }
-        
-        .footer-col h3 {
-            font-size: 20px;
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-        
-        .footer-col h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
+                /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
             width: 50px;
-            height: 2px;
+            height: 50px;
             background: var(--secondary);
-        }
-        
-        .footer-col p {
-            margin-bottom: 15px;
-            color: #bdc3c7;
-        }
-        
-        .footer-links li {
-            margin-bottom: 10px;
-            list-style: none;
-        }
-        
-        .footer-links a {
-            color: #bdc3c7;
-            transition: color 0.3s ease;
-            display: block;
-        }
-        
-        .footer-links a:hover {
-            color: var(--secondary);
-            padding-left: 5px;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 15px;
-        }
-        
-        .social-links a {
+            color: white;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
             transition: all 0.3s ease;
+            z-index: 999;
         }
         
-        .social-links a:hover {
-            background: var(--secondary);
-            transform: translateY(-3px);
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
         }
         
-        .footer-bottom {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #bdc3c7;
-            font-size: 14px;
+        .back-to-top:hover {
+            background: var(--accent);
         }
+        /* Footer */
+
+    footer {
+    background: var(--dark);
+    color: white;
+    padding: 50px 0 20px;
+    margin-top: auto; /* This pushes footer to bottom */
+}
+
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.footer-col h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-col h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: var(--secondary);
+}
+
+.footer-col p {
+    margin-bottom: 15px;
+    color: #bdc3c7;
+}
+
+.footer-links {
+    padding: 0; /* Add this to remove default padding */
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+    list-style: none;
+}
+
+.footer-links a {
+    color: #bdc3c7;
+    transition: color 0.3s ease, padding-left 0.3s ease; /* Add transition for padding */
+    display: block;
+    text-decoration: none; /* Add this to remove underline */
+}
+
+.footer-links a:hover {
+    color: var(--secondary);
+    padding-left: 5px;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px; /* Add some spacing */
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: white;
+    transition: all 0.3s ease;
+    text-decoration: none; /* Add this to remove underline */
+}
+
+.social-links a:hover {
+    background: var(--secondary);
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #bdc3c7;
+    font-size: 14px;
+}
         /* Animation Classes */
 .service-card {
     opacity: 0;
@@ -858,35 +973,7 @@ nav.scrolled ul li a:hover::after {
 .portfolio-item:nth-child(5) { transition-delay: 0.5s; }
 .portfolio-item:nth-child(6) { transition-delay: 0.6s; }
         
-        /* Back to Top Button */
-        .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            background: var(--secondary);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            z-index: 999;
-        }
-        
-        .back-to-top.active {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        .back-to-top:hover {
-            background: var(--accent);
-        }
+
         
        /* Responsive Styles */
 @media (max-width: 1200px) {

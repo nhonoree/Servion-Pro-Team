@@ -1,15 +1,15 @@
 
     // <!-- JavaScript -->
-window.addEventListener("scroll", function () {
-    const header = document.querySelector("header");
-    const hero = document.querySelector(".hero");
+// window.addEventListener("scroll", function () {
+//     const header = document.querySelector("header");
+//     const hero = document.querySelector(".hero");
 
-    if (window.scrollY > hero.offsetHeight - 80) {
-        header.classList.add("scrolled");
-    } else {
-        header.classList.remove("scrolled");
-    }
-});
+//     if (window.scrollY > hero.offsetHeight - 80) {
+//         header.classList.add("scrolled");
+//     } else {
+//         header.classList.remove("scrolled");
+//     }
+// });
 
 /* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
 var prevScrollpos = window.pageYOffset;
@@ -23,6 +23,20 @@ window.onscroll = function() {
   prevScrollpos = currentScrollPos;
 }
 
+// Get the phone input element
+const phoneInput = document.getElementById('phone');
+
+// Add event listener to validate input
+phoneInput.addEventListener('input', function(e) {
+    // Remove any non-digit characters and plus sign
+    this.value = this.value.replace(/[^0-9+]/g, '');
+});
+
+// Optional: Add validation on form submission
+document.querySelector('form').addEventListener('submit', function(e) {
+    // Remove any remaining invalid characters before submission
+    phoneInput.value = phoneInput.value.replace(/[^0-9+]/g, '');
+});
         // Mobile Menu Toggle
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const nav = document.getElementById('nav');
@@ -160,23 +174,37 @@ window.onscroll = function() {
         });
         
         // Form Submission
-        const contactForm = document.getElementById('contactForm');
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
+        // const contactForm = document.getElementById('contactForm');
+        // contactForm.addEventListener('submit', (e) => {
+        //     e.preventDefault();
             
-            // Get form values
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
+        //     // Get form values
+        //     const name = document.getElementById('name').value;
+        //     const email = document.getElementById('email').value;
+        //     const subject = document.getElementById('subject').value;
+        //     const message = document.getElementById('message').value;
             
-            // Here you would typically send the data to a server
-            // For this example, we'll just show an alert
-            alert(`Thank you, ${name}! Your message has been sent. We'll contact you soon at ${email}.`);
+        //     // Here you would typically send the data to a server
+        //     // For this example, we'll just show an alert
+        //     alert(`Thank you, ${name}! Your message has been sent. We'll contact you soon at ${email}.`);
             
-            // Reset form
-            contactForm.reset();
-        });
+        //     // Reset form
+        //     contactForm.reset();
+        // });
+
+           
+                var submitted = false;
+                document.getElementById('contactForm').addEventListener('submit', function (e) {
+                    if (submitted) {
+                        document.getElementById('successMessage').style.display = 'block';
+                        setTimeout(function () {
+                            document.getElementById('contactForm').reset();
+                            document.getElementById('successMessage').style.display = 'none';
+                            submitted = false;
+                        }, 3000);
+                    }
+                });
+            
         // Scroll Animation for Elements
 const animateOnScroll = () => {
     const animatedElements = document.querySelectorAll('.service-card, .portfolio-item, .feature-item, .testimonial-slide, .accordion-item');
