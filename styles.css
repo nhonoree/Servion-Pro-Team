@@ -480,6 +480,33 @@ nav.scrolled ul li a:hover::after {
 
 
 
+/* Mobile responsive: horizontal slider */
+/* @media (max-width: 768px) {
+    .services-grid { */
+        display: flex;            /* switch to flex for horizontal scrolling */
+        overflow-x: auto;         /* enable horizontal scroll */
+        gap: 20px;                /* spacing between cards */
+        scroll-snap-type: x mandatory; /* optional: snap effect */
+        padding-bottom: 10px;     /* optional padding */
+    }
+
+    /* .service-card { */
+        min-width: 90%;           /* almost full width on mobile */
+        flex: 0 0 auto;           /* prevent shrinking */
+        scroll-snap-align: start; /* optional: snap alignment */
+        margin: 0;                /* remove grid gap effect */
+    }
+
+    /* Optional: hide horizontal scrollbar */
+    .services-grid::-webkit-scrollbar {
+        display: none;
+    }
+}
+/* @media (max-width: 480px) {
+    .service-card { */
+        min-width: 95%; /* slightly wider for very small phones */
+    }
+}
 
         /* Protocol Section */
         .protocol {
