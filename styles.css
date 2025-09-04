@@ -615,14 +615,21 @@ nav.scrolled ul li a:hover::after {
             margin-bottom: 10px;
             transform: translateY(20px);
             transition: transform 0.3s ease;
+             text-align: center; /* center multi-line text */
         }
         
-        .portfolio-overlay p {
+        /* .portfolio-overlay p {
             color: rgba(255, 255, 255, 0.8);
             transform: translateY(20px);
             transition: transform 0.3s ease 0.1s;
-        }
-        
+        } */
+        .portfolio-overlay p {
+    color: rgba(255, 255, 255, 0.8);
+    transform: translateY(20px);
+    transition: transform 0.3s ease 0.1s, opacity 0.3s ease;
+    opacity: 2;
+    text-align: center; /* center multi-line text */
+}
         .portfolio-item:hover .portfolio-overlay h3,
         .portfolio-item:hover .portfolio-overlay p {
             transform: translateY(0);
