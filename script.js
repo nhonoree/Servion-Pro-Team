@@ -23,20 +23,46 @@ window.onscroll = function() {
   prevScrollpos = currentScrollPos;
 }
 
-// Get the phone input element
-const phoneInput = document.getElementById('phone');
+// // Get the phone input element
+// const phoneInput = document.getElementById('phone');
 
-// Add event listener to validate input
-phoneInput.addEventListener('input', function(e) {
-    // Remove any non-digit characters and plus sign
-    this.value = this.value.replace(/[^0-9+]/g, '');
-});
+// // Add event listener to validate input
+// phoneInput.addEventListener('input', function(e) {
+//     // Remove any non-digit characters and plus sign
+//     this.value = this.value.replace(/[^0-9+]/g, '');
+// });
 
-// Optional: Add validation on form submission
-document.querySelector('form').addEventListener('submit', function(e) {
-    // Remove any remaining invalid characters before submission
-    phoneInput.value = phoneInput.value.replace(/[^0-9+]/g, '');
-});
+// // Optional: Add validation on form submission
+// document.querySelector('form').addEventListener('submit', function(e) {
+//     // Remove any remaining invalid characters before submission
+//     phoneInput.value = phoneInput.value.replace(/[^0-9+]/g, '');
+// });
+
+ const phoneInput = document.querySelector("#phone");
+
+  // Initialize with Rwanda default
+  const iti = window.intlTelInput(phoneInput, {
+    initialCountry: "rw",
+    separateDialCode: true,
+    preferredCountries: ["rw", "us", "gb"],
+    utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
+  });
+
+  // Prevent letters: allow only numbers, space, +, -
+  phoneInput.addEventListener("input", function () {
+    this.value = this.value.replace(/[^0-9+\-\s]/g, "");
+  });
+
+  // Validate before form submission
+  document.querySelector("form").addEventListener("submit", function(e) {
+    if (!iti.isValidNumber()) {
+      e.preventDefault();
+      alert("Please enter a valid phone number.");
+      return;
+    }
+    // Save full number in international format
+    phoneInput.value = iti.getNumber();
+  });
         // Mobile Menu Toggle
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const nav = document.getElementById('nav');
@@ -173,38 +199,31 @@ document.querySelector('form').addEventListener('submit', function(e) {
             });
         });
         
-        // Form Submission
-        // const contactForm = document.getElementById('contactForm');
-        // contactForm.addEventListener('submit', (e) => {
-        //     e.preventDefault();
-            
-        //     // Get form values
-        //     const name = document.getElementById('name').value;
-        //     const email = document.getElementById('email').value;
-        //     const subject = document.getElementById('subject').value;
-        //     const message = document.getElementById('message').value;
-            
-        //     // Here you would typically send the data to a server
-        //     // For this example, we'll just show an alert
-        //     alert(`Thank you, ${name}! Your message has been sent. We'll contact you soon at ${email}.`);
-            
-        //     // Reset form
-        //     contactForm.reset();
-        // });
+      
 
            
-                var submitted = false;
-                document.getElementById('contactForm').addEventListener('submit', function (e) {
-                    if (submitted) {
-                        document.getElementById('successMessage').style.display = 'block';
-                        setTimeout(function () {
-                            document.getElementById('contactForm').reset();
-                            document.getElementById('successMessage').style.display = 'none';
-                            submitted = false;
-                        }, 3000);
-                    }
-                });
-            
+//               document.getElementById('contactForm').addEventListener('submit', function (e) {
+//     e.preventDefault(); // prevent default page reload (remove if you want actual submit)
+
+//     // ✅ Show success message immediately after form submission
+//     document.getElementById('successMessage').style.display = 'block';
+
+//     // ✅ Reset form after 3 seconds
+//     setTimeout(function () {
+//       document.getElementById('contactForm').reset();
+//       document.getElementById('successMessage').style.display = 'none';
+//     }, 3000);
+//   });
+              var submitted = false;
+
+  function showSuccessMessage() {
+    document.getElementById('successMessage').style.display = 'block';
+    setTimeout(function () {
+      document.getElementById('contactForm').reset();
+      document.getElementById('successMessage').style.display = 'none';
+      submitted = false;
+    }, 3000);
+  }
         // Scroll Animation for Elements
 const animateOnScroll = () => {
     const animatedElements = document.querySelectorAll('.service-card, .portfolio-item, .feature-item, .testimonial-slide, .accordion-item');
