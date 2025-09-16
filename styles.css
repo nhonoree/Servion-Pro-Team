@@ -785,6 +785,17 @@ nav.scrolled ul li a:hover::after {
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
+        .form-row {
+    display: flex;
+    gap: 20px; /* space between inputs */
+    flex-wrap: wrap; /* makes it responsive */
+}
+
+.form-row .form-group {
+    flex: 1; /* equal width */
+    min-width: 200px; /* prevents inputs from shrinking too small */
+}
+
         
         .form-group {
             margin-bottom: 20px;
